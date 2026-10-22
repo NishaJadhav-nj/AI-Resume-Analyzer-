@@ -1,0 +1,70 @@
+:root {
+  /* Color tokens */
+  --ink: #0F1115;
+  --panel: #171A21;
+  --panel-raised: #1D212A;
+  --hairline: #2A2F3A;
+  --paper: #EDEAE1;
+  --paper-dim: #A9A6A0;
+  --amber: #FFB454;
+  --amber-dim: #6B5530;
+  --teal: #4FD1C5;
+  --teal-dim: #1E4640;
+  --coral: #E8604C;
+  --coral-dim: #4A2621;
+  --slate: #7C8494;
+
+  /* Type */
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--ink);
+  color: var(--paper);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+a { color: var(--teal); }
+
+::selection {
+  background: var(--amber);
+  color: var(--ink);
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+/* Visible keyboard focus, per accessibility floor */
+:focus-visible {
+  outline: 2px solid var(--amber);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.mono { font-family: var(--font-mono); }
+
+.scrollbar-thin::-webkit-scrollbar { width: 8px; height: 8px; }
+.scrollbar-thin::-webkit-scrollbar-thumb { background: var(--hairline); border-radius: 4px; }
+.scrollbar-thin::-webkit-scrollbar-track { background: transparent; }
